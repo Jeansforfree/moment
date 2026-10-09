@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "文章管理"
+    files:
+      - name: "all_posts"
+        label: "全部文章"
+        file: "content/posts.json"
+        fields:
+          - label: "文章列表"
+            name: "posts"
+            widget: "list"
+            fields:
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "日期", name: "date", widget: "string" }
+              - { label: "正文", name: "body", widget: "markdown" }
