@@ -1,1 +1,180 @@
-# moment
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>azworld · 个人主页</title>
+<style>
+  /* ====== 颜色设置：白底 + 牛仔裤淡蓝 ====== */
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --text-light: #666666;
+    --blue: #4a6fa5;
+    --blue-light: #eef3fa;
+    --border: #e5e7eb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* 顶部导航 */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    font-size: 0.9rem;
+  }
+  .nav-logo { font-weight: 700; color: var(--text); }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links a { color: var(--text-light); }
+
+  /* 个人头部 */
+  .hero { text-align: center; margin-bottom: 60px; }
+  .avatar {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    margin: 0 auto 20px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem; color: var(--blue);
+    overflow: hidden;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .hero h1 { font-size: 1.8rem; margin-bottom: 8px; }
+  .hero .info { color: var(--text-light); font-size: 0.9rem; margin-bottom: 16px; display: flex; justify-content: center; gap: 16px; }
+
+  /* 板块标题 */
+  h2 {
+    font-size: 1.1rem; font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* 关于我 */
+  .about { margin-bottom: 60px; font-size: 0.95rem; color: var(--text-light); }
+  .about p { margin-bottom: 12px; }
+
+  /* 文章列表 */
+  .posts { margin-bottom: 60px; }
+  .post-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+  }
+  .post-item:hover { background: var(--blue-light); }
+  .post-item .date { font-size: 0.85rem; color: var(--text-light); width: 110px; flex-shrink: 0; }
+  .post-item .title { font-size: 0.95rem; font-weight: 500; flex-grow: 1; }
+  .post-item .arrow { color: var(--text-light); }
+
+  /* 技能 */
+  .skills { margin-bottom: 60px; }
+  .skill-group { margin-bottom: 20px; }
+  .skill-group h3 { font-size: 0.9rem; margin-bottom: 10px; font-weight: 500; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tags span {
+    background: var(--blue-light);
+    color: var(--blue);
+    padding: 4px 12px; border-radius: 6px;
+    font-size: 0.82rem;
+  }
+
+  /* 页脚 */
+  footer { text-align: center; font-size: 0.8rem; color: var(--text-light); border-top: 1px solid var(--border); padding-top: 30px; }
+
+  @media (max-width: 600px) {
+    .post-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .post-item .date { width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<nav>
+  <div class="nav-logo">azworld</div>
+  <div class="nav-links">
+    <a href="#about">关于</a>
+    <a href="#posts">文章</a>
+    <a href="#skills">技能</a>
+  </div>
+</nav>
+
+<!-- 个人头部 -->
+<div class="hero">
+  <div class="avatar">
+    <!-- 想换头像：把下面这行的 A 改成 <img src="你的图片地址"> -->
+    A
+  </div>
+  <h1>azworld</h1>
+  <div class="info">
+    <span>📍 中国</span>
+    <span>🔗 GitHub</span>
+  </div>
+</div>
+
+<!-- 关于我 -->
+<div class="about" id="about">
+  <h2>关于我</h2>
+  <p>你好，我是 azworld。</p>
+  <p>这里是我记录生活和写文章的地方。你可以在这里随便逛逛。</p>
+  <p>我喜欢探索各种有趣的事物。</p>
+</div>
+
+<!-- 文章 -->
+<div class="posts" id="posts">
+  <h2>文章</h2>
+  <!-- 想增加文章：复制下面一整段 <a class="post-item"> ... </a> 改文字即可 -->
+  <a class="post-item" href="#">
+    <span class="date">2026年10月9日</span>
+    <span class="title">你好，这是我的第一篇博客</span>
+    <span class="arrow">→</span>
+  </a>
+  <a class="post-item" href="#">
+    <span class="date">2026年10月8日</span>
+    <span class="title">我的第一个作品</span>
+    <span class="arrow">→</span>
+  </a>
+</div>
+
+<!-- 技能 -->
+<div class="skills" id="skills">
+  <h2>技能</h2>
+  <div class="skill-group">
+    <h3>网页开发</h3>
+    <div class="skill-tags">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+    </div>
+  </div>
+  <div class="skill-group">
+    <h3>其他</h3>
+    <div class="skill-tags">
+      <span>Markdown</span>
+      <span>Git</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 azworld
+</footer>
+
+</body>
+</html>
